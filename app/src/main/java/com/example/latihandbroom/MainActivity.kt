@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //untuk recyclerview menampilkan data inputan
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        //menggabungkan UI data dengan data
         val adapter = WordListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -29,12 +31,14 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+        //mengatur fungsi tombol plus
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity,NewWordActivity::class.java)
             startActivityForResult(intent,newWordActivityRequestCode)
 
         }
+        //mengatur fungsi tombol delete
         val del = findViewById<Button>(R.id.btnhapus)
         del.setOnClickListener{
             wordViewModel.deleteAll()
@@ -42,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //tampilan setelah data dimasukkan
     override fun onActivityResult(requestCode: Int,     resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

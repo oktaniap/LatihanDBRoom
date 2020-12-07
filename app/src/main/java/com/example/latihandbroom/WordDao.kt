@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
+//sebagai data object access
 @Dao
 interface WordDao {
     @Query("SELECT * from word_table ORDER BY word ASC")

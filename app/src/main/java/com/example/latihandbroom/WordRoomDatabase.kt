@@ -8,6 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
+//sebagai room data
 //Annotates class to be a Room Database with a table (entity) of the Word Class
 @Database(entities = arrayOf(Word::class), version = 1, exportSchema = false)
 public abstract class WordRoomDatabase : RoomDatabase() {
